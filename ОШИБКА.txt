@@ -1,0 +1,8 @@
+ pytest --alluredir=%allure_result_folder% ./test
+ImportError while loading conftest 'C:\Users\Ксения\PycharmProjects\Diplom_2\tests\conftest.py'.
+tests\conftest.py:3: in <module>
+    from urls import main_url, create_user_url, login_user_url, user_url
+E   ModuleNotFoundError: No module named 'urls'
+
+При попытке сделать Allure-отчет отображается такая ошибка, подскажите, что не так?
+все тесты работают

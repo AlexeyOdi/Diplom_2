@@ -1,0 +1,7 @@
+main_url = 'https://stellarburgers.nomoreparties.site/'
+get_ing = 'api/ingredients'
+order_url = 'api/orders'
+create_user_url = 'api/auth/register'
+user_url = 'api/auth/user'
+login_user_url = 'api/auth/login'
+get_all_orders = 'api/orders/all'
