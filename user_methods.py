@@ -32,3 +32,8 @@ class User:
     @allure.step("Получение заказа")
     def get_orders(self, token):
         return requests.get(main_url+order_url, headers={'authorization':token})
+
+    @allure.step("Получение токена из ответа АПИ")
+    def get_token(self, response):
+        token = response.json().get("accessToken")
+        return token

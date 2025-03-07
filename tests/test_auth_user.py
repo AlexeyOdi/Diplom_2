@@ -4,16 +4,16 @@ import pytest
 import allure
 
 class TestAuthUser:
-    @pytest.mark.usefixtures('login_delete')
+    @pytest.mark.usefixtures('setup')
     @allure.title("Проверка авторизации")
-    def test_auth_user(self):
-        assert self.response.status_code == 200 and success in self.response.text
+    def test_auth_user(self, setup):
+        response = setup
+        assert response.status_code == 200 and success in response.text
 
-    @pytest.mark.usefixtures('create_delete')
     @allure.title("Проверка авторизации с неккоректными логином и паролем")
-    def test_auth_with_incorrect_log_and_pass(self, create_delete):
+    def test_auth_with_incorrect_log_and_pass(self):
         test = User()
-        user_data = create_delete
+        user_data = {}
         user_data['email'] = 'wrong_email'
         user_data['password'] = 'wrong_password'
         response = test.login_user(user_data)

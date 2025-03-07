@@ -3,17 +3,18 @@ from user_methods import User
 import pytest
 import allure
 
+@pytest.mark.usefixtures('setup')
 class TestGetOrders:
-    @pytest.mark.usefixtures('create_delete')
     @allure.title("Проверка получения заказа неавторизированного пользователя")
-    def test_get_unauth_user_order(self):
+    def test_get_unauth_user_order(self, get_token):
         test = User()
-        response = test.get_orders(self.token)
+        token = get_token
+        response = test.get_orders(token)
         assert response.status_code == 200 and success in response.text
 
-    @pytest.mark.usefixtures('login_delete')
     @allure.title("Проверка получения заказа авторизированного пользователя")
-    def test_get_auth_user_order(self, login_delete):
+    def test_get_auth_user_order(self, get_token):
         test = User()
-        response = test.get_orders(login_delete)
+        token = get_token
+        response = test.get_orders(token)
         assert response.status_code == 200 and success in response.text

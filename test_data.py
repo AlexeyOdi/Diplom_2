@@ -11,3 +11,5 @@ name_to_change = {'name': 'Alex'}
 email_change_error = "User with such email already exists"
 order_data = {"ingredients": ['61c0c5a71d1f82001bdaaa6d', '61c0c5a71d1f82001bdaaa6f', '61c0c5a71d1f82001bdaaa72']}
 ingr_error = "Ingredient ids must be provided"
+using_email = {'email': 'alex@yandex.ru'}
+
